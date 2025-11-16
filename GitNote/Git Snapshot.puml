@@ -1,0 +1,38 @@
+@startuml Git
+!pragma teoz true
+hide footbox
+
+skinparam defaultFontName Courier New
+
+box Workspace
+participant "Untracked" as s11
+participant "Unmodified" as s12
+Participant "Modified" as s13
+end box
+
+participant "Index" as s2
+
+box Repository
+participant "Unmodified" as s3
+end box
+
+participant "GitHub" as s4
+
+s12 -> s11: 1 new
+s11 -> s2: git add
+&s2 -> s3: git commit
+|||
+s12 -> s11: 3 remove
+&s12 -> s13: 2 modify
+&s13 -> s2: git add
+&s2-> s3: git commit
+&s3 -> s4: git push
+s13 -> s12: git resotre
+&s2 -> s13: git restore
+&s4 -> s3: git fetch
+|||
+s3 -> s2: git reset --soft
+s3 -> s13: git reset
+s3 -> s11: git reset --hard
+
+@enduml
