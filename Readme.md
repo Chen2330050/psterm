@@ -1,5 +1,9 @@
 # Readme
 
+![alt text](pwsh.png)
+
+img by CodeImg
+
 ## Why psterm?
 
 1. 基於傳統

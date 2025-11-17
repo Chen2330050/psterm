@@ -11,7 +11,7 @@ git clone url path-name
 
 ```bash
 git fetch origin
-git push origin master
+git push origin master [-f]
 ```
 
 ### remote
