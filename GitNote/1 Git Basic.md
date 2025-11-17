@@ -33,18 +33,20 @@ git checkout file-name
 
 ```bash
 # 正常提交
-git commit -m "commit-content"
+git commit -m "message"
 
 # 和上次合併提交
-git commit --amend -m "commit-content"
+git commit --amend
+
+# 修改上次提交內容(若工作區或預存區有改變將提交為新的commit)
+git commit -a -m "message"
 ```
 
-commit-content:
+message:
 
-- initial commit
-- add 新增
-- modify 修改
-- delete 刪除
+ 1. new, add
+ 2. modify, update
+ 3. remove, rename, move
 
 ### reset
 
@@ -73,8 +75,7 @@ note:
 ```bash
 git stash
 git stash list
-git stash pop # 套用並清除該歷史紀錄
-git stash apply # 套用但不清除歷史
-git stash drop stash@{n} #清除指定stash
+git stash pop | apply # 套用並清除該歷史紀錄 | 不清除歷史(可以再次使用)
+git stash drop stash@{n} # 清除指定stash
 git stash clear # 清除所有stash
 ```

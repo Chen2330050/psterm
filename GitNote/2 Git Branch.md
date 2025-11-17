@@ -30,7 +30,6 @@ git branch -m old-branch new-branch
 ## merge
 
 ```bash
-# on branch master
-# dev -> master
+# on branch main, dev -> main
 git merge dev
 ```
